@@ -118,16 +118,16 @@ CREATE TABLE msg
 
 
 INSERT INTO trainers (name, phone, photo)
-VALUES ('Иванов Петр Сидорович', '+79876543211', 'image/trainer_photo1.jpg');
+VALUES ('Иванов Кирилл Валерьевич', '+79876543211', 'image/trainer_photo1.jpg');
 INSERT INTO clients (name, is_man, phone, birthdate, trainer_id)
-VALUES ('Иванов Петр Сидорович', true, '+79876543210', '1996-02-09T00:00:00Z', 1);
+VALUES ('Иванов Кирилл Валерьевич', true, '+79876543210', '1996-02-09T00:00:00Z', 1);
 INSERT INTO users (login, password_hash, role, client_id, trainer_id)
 VALUES ('Train01', '6b776572666a6e6c3334726837383965726637387736810ed90aa5de17cbc1b471b999ec6b53b7c602', 1, 1, 1);
 
 INSERT INTO trainers (name, phone, photo)
-VALUES ('Алексеев Кирил Михайлович', '+79865432107', 'image/trainer_photo2.jpg');
+VALUES ('Ушаков Семен Васильевич', '+79865432107', 'image/trainer_photo2.jpg');
 INSERT INTO clients (name, is_man, phone, birthdate, trainer_id)
-VALUES ('Алексеев Кирил Михайлович', true, '+79865432107', '1983-08-04T00:00:00Z', 2);
+VALUES ('Ушаков Семен Васильевич', true, '+79865432107', '1983-08-04T00:00:00Z', 2);
 INSERT INTO users (login, password_hash, role, client_id, trainer_id)
 VALUES ('Train02', '6b776572666a6e6c3334726837383965726637387736810ed90aa5de17cbc1b471b999ec6b53b7c602', 1, 2, 2);
 

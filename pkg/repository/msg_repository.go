@@ -138,11 +138,20 @@ func (r *MsgPostgres) GetAllDiscussionById(id int, isClient bool) ([]model.Discu
 		}
 
 		if len(msg) > 0 {
+			var date = msg[0].Date
+
+			for _, m := range msg {
+				d1, errD1 := time.Parse("2006-01-02T15:04:05Z", date)
+				d2, errD2 := time.Parse("2006-01-02T15:04:05Z", m.Date)
+				if errD1 == nil && errD2 == nil && d1.UnixMilli() < d2.UnixMilli() {
+					date = m.Date
+				}
+			}
 			resultMsgs = append(resultMsgs, model.Discussion{
 				TaskId:   task.Id,
 				Task:     resultTask,
 				Client:   clientResult,
-				TaskDate: task.Date,
+				TaskDate: date,
 			})
 		}
 	}

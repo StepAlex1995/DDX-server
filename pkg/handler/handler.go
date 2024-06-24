@@ -66,6 +66,7 @@ func (h *Handler) InitRoutes() *gin.Engine {
 		{
 			msg.GET("/:id", h.getAllMsgForTask)                              //t c
 			msg.POST("/", h.sendMsg)                                         //t c
+			msg.POST("/voice", h.sendMsgVoice)                               //t c
 			msg.GET("/discussion/:id", h.getAllDiscussionForClient)          //t c
 			msg.GET("/discussion/trainer/:id", h.getAllDiscussionForTrainer) //t c
 		}

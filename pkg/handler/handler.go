@@ -51,9 +51,10 @@ func (h *Handler) InitRoutes() *gin.Engine {
 		}
 		file := api.Group("/file")
 		{
-			file.POST("/exercise", h.loadPhotoExercise) //t
-			file.POST("/task", h.loadFeedbackTask)      //c
-			file.GET("/download/:id", h.downloadFile)   //c
+			file.POST("/exercise", h.loadPhotoExercise)           //t
+			file.POST("/task", h.loadFeedbackTask)                //c
+			file.POST("/task/video/:id", h.loadFeedbackTaskVideo) //c
+			file.GET("/download/:id", h.downloadFile)             //c
 		}
 		task := api.Group("/task")
 		{
